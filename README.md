@@ -10,8 +10,8 @@ A multi-agent language learning application built for the Google AI Agents Cours
   - **Cultural Advisor**: Offers cultural insights relevant to the conversation.
   - **Scenario Generator**: Creates immersive roleplay situations.
 - **Multi-Language Support**:
-  - **Native Languages**: English, Cantonese (yue), Traditional Chinese (zh-TW), etc.
-  - **Target Languages**: English, Japanese, French, German, Traditional Chinese.
+  - **Native Languages**: English, French, German, Japanese, Traditional Chinese, Cantonese.
+  - **Target Languages**: English, French, German, Japanese, Traditional Chinese, Cantonese.
 - **Memory**: Remembers user profile and conversation history.
 
 ## Prerequisites
