@@ -53,8 +53,53 @@ A multi-agent language learning application built for the Google AI Agents Cours
 4.  Type or speak your response.
 5.  Receive a reply from the partner, plus grammar corrections and cultural tips in the sidebar!
 
+## Problem
+
+Language learners often struggle to bridge the gap between textbook grammar and real-world conversation. They lack:
+1.  **Contextual Practice**: Textbooks don't adapt to specific scenarios (e.g., "ordering street food in Taipei").
+2.  **Immediate Feedback**: Tutors aren't always available to correct mistakes instantly.
+3.  **Cultural Nuance**: Language is tied to culture, but most apps focus only on vocabulary.
+4.  **Native Language Support**: Explanations are often in the target language, which can be confusing for beginners.
+
+## Solution
+
+**LinguaFlow** is an AI-powered immersive conversation partner that solves these problems using a **Multi-Agent System**:
+- **Personalized Scenarios**: Generates unique roleplay situations based on user interests.
+- **Native-Language Feedback**: A dedicated "Grammar Coach" explains errors in the user's *native language* (e.g., explaining English grammar in Cantonese).
+- **Cultural Context**: A "Cultural Advisor" provides relevant tips (e.g., tipping etiquette, bowing) alongside the dialogue.
+- **Speech Integration**: Supports voice input for realistic speaking practice.
+
 ## Architecture
 
+The application follows a modular multi-agent architecture:
+
+```mermaid
+graph TD
+    User[User Client] <-->|JSON/HTTP| Server[Express Server]
+    
+    subgraph "Agent Orchestration"
+        Server -->|1. Context| Conversation[Conversation Agent]
+        Server -->|2. Analysis| Grammar[Grammar Coach]
+        Server -->|3. Context| Culture[Cultural Advisor]
+        Server -->|4. Request| Scenario[Scenario Generator]
+    end
+    
+    subgraph "LLM Layer"
+        Conversation -->|Prompt| Gemini[Google Gemini 2.0 Flash]
+        Grammar -->|Prompt| Gemini
+        Culture -->|Prompt| Gemini
+        Scenario -->|Prompt| Gemini
+    end
+    
+    Conversation -->|Reply| Server
+    Grammar -->|Correction| Server
+    Culture -->|Tip| Server
+    Scenario -->|New Scenario| Server
+```
+
+### Tech Stack
 - **Backend**: Node.js + Express + TypeScript
-- **AI**: Google Gemini Pro via `@google/generative-ai`
-- **Frontend**: Vanilla HTML/CSS/JS
+- **AI**: Google Gemini 2.0 Flash via `@google/generative-ai`
+- **Frontend**: Vanilla HTML/CSS/JS (Responsive Design)
+- **Speech**: Web Speech API (Browser Native)
+
