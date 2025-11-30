@@ -1,4 +1,4 @@
-# LinguaFlow - AI Conversation Partner
+# Lingua Flow - AI Conversation Partner
 
 A multi-agent language learning application built for the Google AI Agents Course Capstone.
 
@@ -63,7 +63,7 @@ Language learners often struggle to bridge the gap between textbook grammar and 
 
 ## Solution
 
-**LinguaFlow** is an AI-powered immersive conversation partner that solves these problems using a **Multi-Agent System**:
+**Lingua Flow** is an AI-powered immersive conversation partner that solves these problems using a **Multi-Agent System**:
 - **Personalized Scenarios**: Generates unique roleplay situations based on user interests.
 - **Native-Language Feedback**: A dedicated "Grammar Coach" explains errors in the user's *native language* (e.g., explaining English grammar in Cantonese).
 - **Cultural Context**: A "Cultural Advisor" provides relevant tips (e.g., tipping etiquette, bowing) alongside the dialogue.
